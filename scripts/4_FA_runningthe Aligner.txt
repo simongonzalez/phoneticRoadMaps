@@ -1,0 +1,11 @@
+#Author: Simon Gonzalez
+#email: simon.gonzalez@anu.edu.au
+
+Instructiions from the original repository
+https://montreal-forced-aligner.readthedocs.io/en/latest/
+
+Activate aligner
+conda activate aligner
+
+Working code...................................................................
+mfa train FA_nanasu_in nanasu_dict.txt FA_nanasu_aligned -o nanasu_acoustic_model.zip
