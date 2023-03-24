@@ -3,13 +3,13 @@
 
 #Loads libraries
 #========================================================
-library(tidyverse)
-library(emuR)
-library(udpipe)
-library(vowels)
-library(parallel)
-library(foreach)
-library(doParallel)
+library(tidyverse)#data wrangling
+library(emuR)#acoustics
+library(udpipe)#language models
+library(vowels)#normalisation
+library(parallel)#processing
+library(foreach)#wrangling
+library(doParallel)#processing
 
 #loads the functions to be used in the identification of contexts
 #........................................................
