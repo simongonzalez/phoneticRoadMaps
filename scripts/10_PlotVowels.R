@@ -3,11 +3,11 @@
 
 #Loads libraries
 #========================================================
-library(tidyverse)
-library(tidyquant)
-library(lmerTest)
-library(ggrepel)
-library(joeyr)
+library(tidyverse)#data wrangling
+library(tidyquant)#visualisation
+library(lmerTest)#models
+library(ggrepel)#text
+library(joeyr)#analysis
 
 #loads file
 lod('dat_normalised_20220817.RData')
