@@ -11,7 +11,7 @@ library(tidyverse)#data wrangling
 #Reads the tranbscription and duration file CSV file created on the previous stage.
 #From the script: 1_GetTranscriptionFiles.R
 #........................................................
-df <- read.csv('datainfo.csv')
+df <- read.csv('datainfo.csv')# reads in the dataset
 
 #Gets all unique words in all the transcriptions
 #........................................................
