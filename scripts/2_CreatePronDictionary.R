@@ -6,7 +6,7 @@ library(tidyverse)#data wrangling
 
 #Function for filtering
 #........................................................
-`%nin%` <- Negate(`%in%`)
+`%nin%` <- Negate(`%in%`) #The opposite of the %in% function
 
 #Reads the tranbscription and duration file CSV file created on the previous stage.
 #From the script: 1_GetTranscriptionFiles.R
