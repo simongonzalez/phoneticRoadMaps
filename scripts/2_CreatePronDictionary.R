@@ -1,8 +1,8 @@
 #Loads libraries
 #========================================================
-library(rPraat)
-library(readtext)
-library(tidyverse)
+library(rPraat)#Textgrid processing
+library(readtext)#read data from text
+library(tidyverse)#data wrangling
 
 #Function for filtering
 #........................................................
