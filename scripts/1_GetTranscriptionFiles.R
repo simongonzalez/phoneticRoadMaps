@@ -14,7 +14,7 @@ fls <- list.files('./xml', full.names = TRUE)
 #Reads information from each transcription file
 #........................................................
 for(i in fls){
-  print(i)
+  print(i)# checks progress
   
   #Reads XML file line by line
   df <- str_squish(read_lines(i))
