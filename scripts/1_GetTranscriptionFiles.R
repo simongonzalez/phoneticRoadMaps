@@ -19,7 +19,7 @@ for(i in fls){
   #Reads XML file line by line from the input files
   df <- str_squish(read_lines(i))
   
-  #locates lines that identify the speaker id
+  #locates lines that identify the speaker id, idenitified by the start string
   sid_locs <- grep('^<S id=', df)
   #locates the audio index
   audio_index <- sid_locs + 1
