@@ -16,7 +16,7 @@ fls <- list.files('./xml', full.names = TRUE)
 for(i in fls){
   print(i)# checks progress
   
-  #Reads XML file line by line
+  #Reads XML file line by line from the input files
   df <- str_squish(read_lines(i))
   
   #locates lines that identify the speaker id
