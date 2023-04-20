@@ -16,12 +16,12 @@ df <- read.csv('datainfo.csv')# reads in the dataset
 #Gets all unique words in all the transcriptions
 #........................................................
 allwords <- sort(unique(unlist(str_split(df$clean_text, ' '))))
-#Total = 1557 words
+#Total = 1557 words #The current count of the words
 
 
 #Creates an empty variable to store the phonemic representation of the words
 #........................................................
-entries = NULL
+entries = NULL #start the entries
 
 #Creates the phonemic representations
 #........................................................
