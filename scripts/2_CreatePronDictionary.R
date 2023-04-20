@@ -26,10 +26,10 @@ entries = NULL #start the entries
 #Creates the phonemic representations
 #........................................................
 for(ii in 1:length(allwords)){
-  tmpE = allwords[ii]
+  tmpE = allwords[ii]#gets the words
   
   if(is.na(as.numeric(tmpE))){
-    tmpE = paste(unlist(strsplit(tmpE, '')), collapse = ' ')
+    tmpE = paste(unlist(strsplit(tmpE, '')), collapse = ' ')#splits the words
   }
   
   entries = append(entries, tmpE)
