@@ -3,7 +3,7 @@
 
 writeInfoLine: "Start"
 
-  # Get original transcription TextGrid............................................
+  # Get original transcription in TextGrid format............................................
   	#Specify the directory
 	directory_raw$ = "01_rawInput_TGs"
   Create Strings as file list... list_raw 'directory_raw$'/*.TextGrid
