@@ -8,7 +8,7 @@ writeInfoLine: "Start"
 	directory_raw$ = "01_rawInput_TGs"
   Create Strings as file list... list_raw 'directory_raw$'/*.TextGrid
 
-	#Get files from the aligned folder from MFA...................
+	#Get files from the aligned folder from MFA outputs...................
 	directory_mfa$ = "02_aligned"
   
 	Create Strings as file list... list_mfa 'directory_mfa$'/*.TextGrid
