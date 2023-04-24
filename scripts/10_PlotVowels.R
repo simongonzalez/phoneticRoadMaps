@@ -17,22 +17,48 @@ dat <- df
 
 #Creates plots
 #========================================================
+# Group the dat data frame by gender and segment
 dat %>%
   group_by(gender, segment) %>%
+  
+  # Add three new columns that represent the mean values of F1, F2, and duration_ms within each group
   mutate(F1 = mean(F1, na.rm = TRUE),
          F2 = mean(F2, na.rm = TRUE),
          Duration = mean(duration_ms, na.rm = TRUE)) %>% 
+  
+  # Keep only unique rows of gender and segment, with all columns intact
   distinct(gender, segment, .keep_all = TRUE) %>%
+  
+  # Keep only the gender, segment, F1, F2, and Duration columns
   dplyr::select(gender, segment, F1, F2, Duration)  %>% 
+  
+  # Remove the grouping structure of the data frame
   ungroup() %>%
+  
+  # Create a new column that concatenates gender and segment
   mutate(plotlabel = paste(gender, segment)) %>%
+  
+  # Create a scatterplot of F2 vs. F1, with point color determined by segment
   ggplot(aes(F2, F1, color = segment, label = plotlabel)) +
+  
+  # Add scatterplot points, with size determined by Duration
   geom_point(aes(size = Duration), show.legend = FALSE) +
+  
+  # Add labels to the scatterplot points, with partial transparency
   geom_text_repel(show.legend = FALSE, alpha = 0.7) +
+  
+  # Reverse the direction of the x-axis
   scale_x_reverse() + #limits = c(2000, 1000)) +
+  
+  # Reverse the direction of the y-axis
   scale_y_reverse() + #limits = c(700, 300)) +
+  
+  # Set the color palette for the segment variable
   scale_color_tq() +
+  
+  # Apply a custom theme to the plot, with a base font size of 12
   theme_tq(base_size = 12)
+
 
 ggsave('./papermaterial/allVowels.jpg', width = 15, height = 12, units = 'cm')
 
