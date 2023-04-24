@@ -1,5 +1,5 @@
 #Author: Simon Gonzalez
-#email: simon.gonzalez@anu.edu.au
+#contact email: simon.gonzalez@anu.edu.au
 
 writeInfoLine: "Start"
 
