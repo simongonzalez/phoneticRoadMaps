@@ -25,7 +25,7 @@ appendInfoLine: "Merging files (0%) |                    |"
 
     select Strings list_raw
     fileName$ = Get string... ifile
-
+     #Reads file from directory location
     Read from file... 'directory_raw$'/'fileName$'
 
 		fullName_raw$ = selected$ ()
