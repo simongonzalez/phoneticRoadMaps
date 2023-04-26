@@ -76,21 +76,42 @@ dat %>%
 ggsave('./papermaterial/allVowelsDur.jpg', width = 15, height = 12, units = 'cm')
 
 #========================================================
+# Group the data by gender and segment, and calculate the mean values for F1_sc, F2_sc, and duration_ms for each group
 dat %>%
   group_by(gender, segment) %>%
   mutate(F1 = mean(F1_sc, na.rm = TRUE),
          F2 = mean(F2_sc, na.rm = TRUE),
          Duration = mean(duration_ms, na.rm = TRUE)) %>% 
+
+  # Keep only the distinct combinations of gender and segment, and retain the remaining columns
   distinct(gender, segment, .keep_all = TRUE) %>%
+
+  # Select the columns for gender, segment, F1, F2, and Duration
   select(gender, segment, F1, F2, Duration)  %>% 
+
+  # Remove the grouping
   ungroup() %>%
+
+  # Create a label for each data point by combining the gender and segment
   mutate(plotlabel = paste(gender, segment)) %>%
+
+  # Create a scatterplot with F2 on the x-axis, F1 on the y-axis, and color-coded by gender and segment
   ggplot(aes(F2, F1, color = interaction(gender, segment), label = plotlabel)) +
+
+  # Add points to the scatterplot, with the size of each point representing Duration
   geom_point(aes(size = Duration), show.legend = FALSE) +
+
+  # Add text labels to the scatterplot, with repulsion to prevent overlap
   geom_text_repel(show.legend = FALSE, alpha = 0.7) +
+
+  # Reverse the x-axis and y-axis scales
   scale_x_reverse() + #limits = c(2000, 1000)) +
   scale_y_reverse() + #limits = c(700, 300)) +
+
+  # Apply a custom color scale
   scale_color_tq() +
+
+  # Apply a custom theme with a base font size of 12
   theme_tq(base_size = 12)
 
 ggsave(paste0('./11_explore/all.png'), width = 15, height = 10, units = 'cm')
