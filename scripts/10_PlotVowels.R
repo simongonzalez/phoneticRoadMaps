@@ -126,21 +126,34 @@ ggsave(paste0('./11_explore/all.png'), width = 15, height = 10, units = 'cm')
 
 #========================================================
 dat %>%
+  # Group the data by 'region' and 'segment'
   group_by(region, segment) %>%
+  # Add columns for the mean values of F1, F2, and duration_ms
   mutate(F1 = mean(F1_sc, na.rm = TRUE),
          F2 = mean(F2_sc, na.rm = TRUE),
          Duration = mean(duration_ms, na.rm = TRUE)) %>% 
+  # Select only unique combinations of 'region' and 'segment' based on all columns
   distinct(region, segment, .keep_all = TRUE) %>%
+  # Select only the columns 'region', 'segment', 'F1', 'F2', 'Duration', and 'stressed'
   select(region, segment, F1, F2, Duration, stressed)  %>% 
+  # Remove grouping
   ungroup() %>%
+  # Create a new column 'plotlabel' that concatenates 'region' and 'segment'
   mutate(plotlabel = paste(region, segment)) %>%
+  # Create a ggplot object with 'F2' on the x-axis, 'F1' on the y-axis, and color based on 'region'
   ggplot(aes(F2, F1, color = region, label = plotlabel)) +
+  # Add a point for each combination of 'F1' and 'F2', with size proportional to 'Duration'
   geom_point(aes(size = Duration)) +
-  #geom_text_repel(show.legend = FALSE, alpha = 0.7) +
+  # Set the x-axis limits from 2000 to 1000
   scale_x_reverse(limits = c(2000, 1000)) +
+  # Set the y-axis limits from 700 to 300
   scale_y_reverse(limits = c(700, 300)) +
+  # Set the color scale using the 'scale_color_tq' function
   scale_color_tq() +
+  # Create facets for 'stressed'
   facet_wrap(~stressed) +
+  # Set the theme using the 'theme_tq' function, with a base font size of 12
   theme_tq(base_size = 12)
 
+# Save the plot as a PNG file with dimensions of 15 cm x 10 cm
 ggsave(paste0('./11_explore/all_regions.png'), width = 15, height = 10, units = 'cm')
