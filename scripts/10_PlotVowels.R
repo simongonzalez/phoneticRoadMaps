@@ -64,13 +64,21 @@ ggsave('./papermaterial/allVowels.jpg', width = 15, height = 12, units = 'cm')
 
 #========================================================
 dat %>%
+  # Add a new column 'Gender' that is equal to the 'gender' column
   mutate(Gender = gender) %>%
+  # Create a ggplot object with 'segment' on the x-axis, 'duration_ms' on the y-axis, and fill color based on 'Gender'
   ggplot(aes(segment, duration_ms, fill = Gender)) +
+  # Add a box plot to the plot
   geom_boxplot() +
+  # Set the y-axis limits from 0 to 250
   scale_y_continuous(limits = c(0, 250)) +
+  # Set the fill color using the 'theme_tq' function
   scale_fill_tq() +
+  # Set the x-axis label as 'Vowel', and y-axis label as 'Duration in ms'
   labs(x = 'Vowel', y = 'Duration in ms') + 
+  # Create a facet grid based on 'segment', with scales set to 'free'
   facet_grid(~segment, scales = 'free') +
+  # Set the theme using the 'theme_tq' function, with a base font size of 12
   theme_tq(base_size = 12)
 
 ggsave('./papermaterial/allVowelsDur.jpg', width = 15, height = 12, units = 'cm')
