@@ -6,7 +6,7 @@
 library(tidyverse)#data wrangling
 library(tidyquant)#visualisation
 library(lmerTest)#models
-library(ggrepel)#text
+library(ggrepel)#text plotting
 library(joeyr)#analysis
 
 #loads file with normalised values
