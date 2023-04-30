@@ -9,7 +9,7 @@ library(lmerTest)#models
 library(ggrepel)#text
 library(joeyr)#analysis
 
-#loads file
+#loads file with normalised values
 lod('dat_normalised_20220817.RData')
 
 #reassigns dataframe
