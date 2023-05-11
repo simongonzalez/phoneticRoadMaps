@@ -39,7 +39,7 @@ for(i in fls){
   }
 }
 
-#This section identifies the time-stamp information:
+#This section identifies the time-stamp information from the files:
 #Start time, End time, and text (orthographic transcription) for each speaker intervention.
 #........................................................
 dat2 <- dat %>%
