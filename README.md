@@ -33,5 +33,7 @@ The Pronunciation dictionary is also available in the file: nanasu_dict.txt
 The first three entries are:
 
 a	a
+
 abita	a b i t a
+
 aeregh	a e r e g h
