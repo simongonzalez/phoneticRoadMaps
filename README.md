@@ -2,7 +2,7 @@
 
 This repository stores a set of scripts in R and Praat used for the forced-alignment, processing, and visualisation of phontic data.
 
-The focus is on processes carried out for minority and endangered languages.
+The focus is on processes carried out for minority and endangered languages, which can be related to languages with small amount of data.
 
 The scripts have been organised in sequential order, which is the recommended structure:
 
