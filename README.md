@@ -30,6 +30,7 @@ The scripts have been organised in sequential order, which is the recommended st
 
 The Pronunciation dictionary is also available in the file: nanasu_dict.txt
 
+
 The first three entries are:
 
 a	a
